@@ -13,14 +13,19 @@ def nrand():
     n2 = np.sqrt(-0.5*np.log(u1)) * u2 / np.sqrt(u1**2 + u2**2)
     return n1, n2
 
-rs = []
 
-for _ in range(10000):
-    n1, n2 = nrand()
-    rs.append(n1)
+def test_nrand():
+    rs = []
 
-plt.subplot(211)
-plt.plot(rs)
-plt.subplot(212)
-plt.hist(np.array(rs), bins=100)
-plt.show()
+    for _ in range(10000):
+        n1, n2 = nrand()
+        rs.append(n1)
+
+    plt.subplot(211)
+    plt.plot(rs)
+    plt.subplot(212)
+    plt.hist(np.array(rs), bins=100)
+    plt.show()
+
+if __name__ == "__main__":
+    test_nrand()
