@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 
 def nrand():
     while True:
-        u1 = np.random.uniform(size=1)
-        u2 = np.random.uniform(size=1)
+        u1 = np.random.uniform(-1, 1, size=1)
+        u2 = np.random.uniform(-1, 1, size=1)
 
         if np.sqrt(u1**2 + u2**2) <= 1:
             break
