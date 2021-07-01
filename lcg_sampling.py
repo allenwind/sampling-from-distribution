@@ -20,5 +20,8 @@ if __name__ == "__main__":
     for _ in range(10000):
         rs.append(next(g))
 
-    plt.hist(np.array(rs), bins=100, density=True)
+    plt.hist(np.array(rs), bins=100, density=True, label="sampling")
+    plt.hlines(1, 0, 1, color="red", label="U[0,1]")
+    plt.legend(loc="upper left")
     plt.show()
+
