@@ -1,5 +1,7 @@
 import numpy as np
 
+# 根据中心极限定理构造正太分布样本
+
 def normal(mu=0, sigma=1, n=100):
     """
     根据中心极限定理
@@ -15,6 +17,7 @@ def gen_normal_curve(rs, u, s):
     return x, rs
 
 if __name__ == "__main__":
+    import scipy.stats as stats
     import matplotlib.pyplot as plt
     mu = 1
     sigma = 2
@@ -25,8 +28,10 @@ if __name__ == "__main__":
     x, c = gen_normal_curve(rs, u=mu, s=sigma)
     plt.plot(x, c, color="red", label="$N({},{}^2)$".format(mu, sigma))
     plt.legend(loc="upper left")
+    print(np.mean(rs), np.var(rs))
+    print(stats.normaltest(rs))
     plt.show()
 
-    print(np.mean(rs), np.var(rs))
+
 
 
