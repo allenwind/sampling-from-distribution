@@ -1,4 +1,5 @@
 import numpy as np
+import scipy.stats as stats
 
 def inverse_transform_sampling(invp):
     """
@@ -8,6 +9,14 @@ def inverse_transform_sampling(invp):
     while True:
         u = np.random.uniform(-1, 1)
         yield invp(u) * np.sqrt(2)
+
+def exponential_pdf_inv(x, a):
+    return - np.log(1 - x) / a
+
+# 用数值解
+normal_pdf_inv = stats.norm.ppf
+
+stats.normaltest
 
 def gen_normal_curve(rs, u, s):
     x = np.linspace(np.min(rs), np.max(rs), len(rs))
