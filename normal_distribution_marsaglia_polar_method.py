@@ -10,7 +10,7 @@ def gen_normal():
         if r <= 1:
             n1 = x * np.sqrt(-2 * np.log(r) / r)
             # n2 = y * np.sqrt(-2 * np.log(r) / r)
-            yield r
+            yield n1
 
 size = 10000
 normal = gen_normal()
