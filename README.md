@@ -57,4 +57,10 @@
 
 
 
-更新中~
+以均匀分布作为参考分布，采样正太分布，
+
+![](asset/accept_reject_sampling_normal_uniform.png)
+
+
+
+持续更新中~
