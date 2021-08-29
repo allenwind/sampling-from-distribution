@@ -2,6 +2,8 @@ import numpy as np
 
 def shuffle(x):
     size = len(x)
+    if size <= 1:
+        return x
     for i in range(size-2):
         j = i + np.random.randint(0, size-i)
         x[i], x[j] = x[j], x[i]
